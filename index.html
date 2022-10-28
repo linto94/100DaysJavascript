@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modal</title>
+    <title>Random Number Generator</title>
     <script
-      src="https://kit.fontawesome.com/0be7a4215f.js"
+      src="https://kit.fontawesome.com/1935d064dd.js"
       crossorigin="anonymous"
     ></script>
     <!-- CSS only -->
@@ -13,34 +13,23 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <h1><span>Let's</span>Create a Modal</h1>
-      <p>Click Button Below</p>
-    </header>
-
-    <section>
-      <div class="container">
-        <form action="">
-          <button id="btn" class="btn">TEST POPUP</button>
-        </form>
-      </div>
-    </section>
-
-    <div class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h1>Hello World!!!</h1>
+    <div class="container">
+      <div class="counter-div">
+        <h1>Random Number Generator</h1>
+        <div class="count number"></div>
         <hr />
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum,
-          doloremque quod. Aspernatur nemo nesciunt quisquam sequi amet nisi
-          rerum quia rem ea. Architecto beatae rerum, veniam, sed minus sit
-          dolorem iure incidunt illum nisi quibusdam excepturi porro, voluptas
-          ratione. Aliquam minus minima explicabo. Delectus possimus rem
-          perspiciatis fuga quas veritatis.
-        </p>
+        <div class="buttons">
+          <!-- <button class="btn subtract">
+            <i class="fas fa-arrow-down"></i> Subtract
+          </button> -->
+          <button class="btn generate">
+            <i class="fas fa-spinner"></i> Generate Number
+          </button>
+          <!-- <button class="btn add"><i class="fas fa-arrow-up"></i> Add</button> -->
+        </div>
       </div>
     </div>
+
     <script src="script.js"></script>
   </body>
 </html>
