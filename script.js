@@ -1,27 +1,33 @@
-const modal = document.querySelector(".modal"); 
-const modalContent = document.querySelector(".modal-content");
-const btn = document.querySelector(".btn"); 
-const close = document.querySelector(".close"); 
+const btn = document.querySelector(".btn");
+const result = document.querySelector(".result");
+
+btn.addEventListener("click", palidrome)
 
 
-btn.addEventListener("click", openModal);
-close.addEventListener("click", closeModal);
-modal.addEventListener("click", closeModal);
+// madam
+// noon
+function palidrome() {
+    const word = document.querySelector(".input-text").value;
+    let len = word.length;
+     
+
+    let start = word.substring(0, Math.floor(len / 2)).
+    toLowerCase();
+    let end = word.substring(len - Math.floor(len / 2)).
+    toLowerCase();
 
 
-// OPEN MODAL
-function openModal(e) {
-    e.preventDefault();
-    modal.style.display = "block";
-}
+    // let flip = end.split("").reverse().join("");
 
-
-// CLOSE MODAL
-function closeModal() {
-    modalContent.classList.add("slide-up");
+    let flip = [...end].reverse().join("");
+    if (start == flip) {
+        result.innerHTML = `${word.toUpperCase()} is a 
+        palindrome`
+    } else {
+        result.innerHTML = `${word.toUpperCase()} is not a 
+        palindrome`
+    } 
     
-    setTimeout(() => {
-        modal.style.display = "none";
-        modalContent.classList.remove("slide-up");  
-    }, 500)
+    // alert(flip);
+
 }
