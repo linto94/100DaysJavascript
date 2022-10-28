@@ -1,27 +1,24 @@
-const modal = document.querySelector(".modal"); 
-const modalContent = document.querySelector(".modal-content");
-const btn = document.querySelector(".btn"); 
-const close = document.querySelector(".close"); 
+const word = document.querySelector(".input-text");
+const btn = document.querySelector(".btn");
+const result = document.querySelector(".result");
 
+btn.addEventListener("click", countVowel);
 
-btn.addEventListener("click", openModal);
-close.addEventListener("click", closeModal);
-modal.addEventListener("click", closeModal);
+function countVowel() {
+    let vowelCount = 0;
+    let wordVal = word.value.toLowerCase();
 
+    for (let i = 0; i < wordVal.length; i++) {
+        let letter = wordVal[i];
+        if (letter.match(/([a,e,i,o,u])/)) {
+          vowelCount++;  
 
-// OPEN MODAL
-function openModal(e) {
-    e.preventDefault();
-    modal.style.display = "block";
+          result.innerHTML = `${word.value.toUpperCase()} has 
+          ${vowelCount} vowels`;
+         
+        }
+    }
+   
 }
 
 
-// CLOSE MODAL
-function closeModal() {
-    modalContent.classList.add("slide-up");
-    
-    setTimeout(() => {
-        modal.style.display = "none";
-        modalContent.classList.remove("slide-up");  
-    }, 500)
-}
